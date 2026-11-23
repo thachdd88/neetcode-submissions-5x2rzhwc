@@ -1,0 +1,15 @@
+class Solution {
+public:
+    string mergeAlternately(string word1, string word2) {
+        string res = "";
+        int idx1{0}, idx2{0};
+        while (idx1 < word1.length() && idx2 < word2.length()) {
+            res = res + word1[idx1];
+            res = res + word2[idx2];
+            idx1++; idx2++;
+        }
+        res += word1.substr(idx1);
+        res += word2.substr(idx2);
+        return res;
+    }
+};
